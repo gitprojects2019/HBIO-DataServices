@@ -6,3 +6,7 @@ git pull/ git fetch
 git merge supriyab
 
 git push
+
+git stash
+
+git stash apply

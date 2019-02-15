@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace Services.Models
 {
@@ -22,7 +19,6 @@ namespace Services.Models
         [BsonElement("governmentId")]
         public string GovernmentId { get; set; }
 
-
         [BsonElement("governmentIdType")]
         public string GovernmentIdType { get; set; }
 
@@ -38,19 +34,19 @@ namespace Services.Models
         [BsonElement("contactNumber")]
         public string ContactNumber { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("state")]
         public string State { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("district")]
         public string District { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("gender")]
         public string Gender { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("tournamentName")]
         public string TournamentName { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("tournamentDate")]
         public DateTime TournamentDate { get; set; }
     }
 }

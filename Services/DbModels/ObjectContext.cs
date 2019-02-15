@@ -28,11 +28,11 @@ namespace Services.DbModels
 
         }
 
-        public IMongoCollection<Student> Students
+        public IMongoCollection<PlayerDetails> PlayerDetails
         {
             get
             {
-                return _database.GetCollection<Student>("Student");
+                return _database.GetCollection<PlayerDetails>("PlayerDetails");
             }
         }
 

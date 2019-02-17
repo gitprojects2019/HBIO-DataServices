@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Serilog;
+using System.Data;
 
 namespace Services.Repository
 {
@@ -89,6 +90,11 @@ namespace Services.Repository
         {
             await _context.PlayerDetails.ReplaceOneAsync(x => x.Id == id, playerDetails);
             return Get(id).Result;
+        }
+
+        public void BulkInsertData()
+        {
+            DataTable dt = BusinessLogic.ExcelReader.ImportExcel(); ;
         }
        
     }

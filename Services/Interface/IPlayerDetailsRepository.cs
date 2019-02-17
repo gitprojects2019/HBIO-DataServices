@@ -13,6 +13,7 @@ namespace Services.Interface
         bool Add(PlayerDetails playerDetails);
         Task<PlayerDetails> Update(string id, PlayerDetails playerDetails);
         Task<DeleteResult> Remove(string id);
+        void BulkInsertData();
         //Task<DeleteResult> Remove();
     }
 }

@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Services.Interface;
 using Services.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace Services.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Player")]
     [ApiController]
     public class PlayerDetailsController : ControllerBase
     {
@@ -42,10 +39,18 @@ namespace Services.Controllers
         }
 
         // POST: api/PlayerDetails
+        [Route("AddData")]
         [HttpPost]
         public bool Post([FromBody] PlayerDetails playerDetails)
         {
             return _playerdetailsRepository.Add(playerDetails);
+        }
+
+        [Route("InsertBulk")]
+        [HttpPost]
+        public void InsertBulk()
+        {
+            _playerdetailsRepository.BulkInsertData();
         }
 
         // PUT: api/PlayerDetails/5

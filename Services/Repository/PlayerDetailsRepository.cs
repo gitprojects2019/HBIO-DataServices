@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Serilog;
 using System.Data;
+using MongoDB.Bson;
 
 namespace Services.Repository
 {
@@ -92,9 +93,19 @@ namespace Services.Repository
             return Get(id).Result;
         }
 
-        public void BulkInsertData()
+        public async void BulkInsertData()
         {
-            DataTable dt = BusinessLogic.ExcelReader.ImportExcel(); ;
+            DataTable dt = BusinessLogic.ExcelReader.ImportExcel();
+            List<BsonDocument> batch = new List<BsonDocument>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr[0] != null)
+                {
+                    var dictionary = dr.Table.Columns.Cast<DataColumn>().ToDictionary(col => col.ColumnName, col => dr[col.ColumnName]);
+                    batch.Add(new BsonDocument(dictionary));
+                }
+            }
+            await _context.BsonPlayerDetails.InsertManyAsync(batch.AsEnumerable());
         }
        
     }

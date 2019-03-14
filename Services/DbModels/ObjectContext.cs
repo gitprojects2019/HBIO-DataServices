@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using Services.Models;
 using System;
@@ -33,6 +34,14 @@ namespace Services.DbModels
             get
             {
                 return _database.GetCollection<PlayerDetails>("PlayerDetails");
+            }
+        }
+
+        public IMongoCollection<BsonDocument> BsonPlayerDetails
+        {
+            get
+            {
+                return _database.GetCollection<BsonDocument>("PlayerDetails");
             }
         }
 

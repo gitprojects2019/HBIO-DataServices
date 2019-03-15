@@ -52,11 +52,11 @@ namespace Services.Models
         [BsonElement("gender")]
         public string Gender { get; set; }
 
-        [BsonElement("tournamentName")]
-        public string TournamentName { get; set; }
-
         [BsonElement("tournamentDate")]
         public DateTime TournamentDate { get; set; }
+
+        [BsonElement("tournamentName")]
+        public string TournamentName { get; set; }        
 
         [BsonElement("tournamentPlace")]
         public string TournamentPlace { get; set; }

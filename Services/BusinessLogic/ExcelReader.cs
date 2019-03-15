@@ -10,7 +10,7 @@ namespace Services.BusinessLogic
 {
     public class ExcelReader
     {
-        public static String filePath = @"F:\personal\GitHBIO\HBIO-DataServices\Player_Data.xlsx";
+        public static String filePath = @"D:\HBIO-DataServices\Player_Data.xlsx";
 
         public static DataTable ImportExcel()
         {

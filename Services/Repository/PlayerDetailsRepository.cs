@@ -99,7 +99,7 @@ namespace Services.Repository
             List<BsonDocument> batch = new List<BsonDocument>();
             foreach (DataRow dr in dt.Rows)
             {
-                if (dr[0] != null)
+                if (dr[0] != DBNull.Value)
                 {
                     var dictionary = dr.Table.Columns.Cast<DataColumn>().ToDictionary(col => col.ColumnName, col => dr[col.ColumnName]);
                     batch.Add(new BsonDocument(dictionary));

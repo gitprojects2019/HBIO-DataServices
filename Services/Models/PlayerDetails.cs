@@ -29,7 +29,7 @@ namespace Services.Models
         public string GovernmentIdType { get; set; }
 
         [BsonElement("dob")]
-        public DateTime DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
 
         [BsonElement("age")]
         public string Age { get; set; }
@@ -52,11 +52,11 @@ namespace Services.Models
         [BsonElement("gender")]
         public string Gender { get; set; }
 
-        [BsonElement("tournamentDate")]
-        public DateTime TournamentDate { get; set; }
-
         [BsonElement("tournamentName")]
-        public string TournamentName { get; set; }        
+        public string TournamentName { get; set; }
+
+        [BsonElement("tournamentDate")]
+        public string TournamentDate { get; set; }
 
         [BsonElement("tournamentPlace")]
         public string TournamentPlace { get; set; }

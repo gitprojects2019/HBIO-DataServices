@@ -10,8 +10,14 @@ namespace Services.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        [BsonElement("name")]
-        public string Name { get; set; }
+        [BsonElement("firstName")]
+        public string FirstName { get; set; }
+
+        [BsonElement("middleName")]
+        public string MiddleName { get; set; }
+
+        [BsonElement("lastName")]
+        public string LastName { get; set; }
 
         [BsonElement("registrationId")]
         public string RegistrationId { get; set; }
@@ -34,6 +40,9 @@ namespace Services.Models
         [BsonElement("contactNumber")]
         public string ContactNumber { get; set; }
 
+        [BsonElement("country")]
+        public string Country { get; set; }
+
         [BsonElement("state")]
         public string State { get; set; }
 
@@ -48,5 +57,8 @@ namespace Services.Models
 
         [BsonElement("tournamentDate")]
         public DateTime TournamentDate { get; set; }
+
+        [BsonElement("tournamentPlace")]
+        public string TournamentPlace { get; set; }
     }
 }
